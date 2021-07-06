@@ -1,22 +1,41 @@
-if(location.href=='http://localhost:3000/'){
+if(location.href=='http://192.168.1.52:3000/'){
 gsap.config({nullTargetWarn: false});
 
 const tl = gsap.timeline();
-tl.set('main', {css: {opacity: 0}}) 
-tl.from('.op-wrapper', {css: {opacity: 0, duration: 1}, ease: Expo.easeInOut}, "op") 
-tl.to('.op-wrapper div', 2.5, {css: {opacity: 1}, ease: Expo.easeInOut}, "op")
-tl.to('.op-wrapper div', 2, {css: {opacity: 0}, ease: Expo.easeInOut}, "op+=2")
-tl.to('.op-wrapper', 2, {css: {y: "-100vh"}, ease: Expo.easeInOut}, "op+=2.5")
-tl.from('main', 1, {css: {opacity: 0}, ease: Expo.easeInOut}, "op+=3.5")
-}
-/*
-tl.from(".first-bg-left", 3, {width:'0', ease: Expo.easeInOut}, "op+=3.2");
-//tl.from(".logo-wrapper", 2, {width:'0', ease: Expo.easeInOut}, "op+=0.1");
-tl.from(".hamburger", 3, {opacity: 0, ease: Expo.easeInOut}, "op+=0.5");
-tl.from(".logo-wrapper h1", 3, {opacity: 0, x: -15, ease: Expo.easeInOut}, "op+=0.75");
-tl.from("header li", 3, {opacity: 0, y: 15, ease: Expo.easeInOut, stagger: 0.2}, "op+=1");
 
-tl.from(".top1-img", 3, {width: 0, scale: 1.8, ease: Expo.easeInOut}, "op+=4");
-tl.from(".top1 .half-desc", 3, {opacity: 0, x: -20, ease: Expo.easeInOut}, "op+=4.25");
+
+tl.set('main', {opacity: 0}) 
+tl.set('.op-wrapper', {opacity: 0}) 
+tl.set('.op-wrapper svg path, .op-wrapper h2', {opacity: 0}) 
+tl.to('.op-wrapper', 1, {autoAlpha: 1, ease: Expo.easeOut}, "op") 
+tl.from('.op-wrapper svg path', 2, {opacity: 0, ease: Expo.easeInOut, stagger: 0.15}, "op+=.5")
+tl.from('.op-wrapper h2', 1.5, {opacity: 0, ease: Expo.easeInOut}, "op+=.5")
+tl.to('.prevent', .1, {autoAlpha: 0}, "op+=1")
+tl.to('.op-wrapper svg, .op-wrapper h2', 1.5, {opacity: 0, ease: Expo.easeInOut}, "op+=2")
+tl.to('.op-wrapper', 1, {autoAlpha: 0, ease: Expo.easeInOut}, "op+=2.5") 
+tl.to('main', 1, {autoAlpha:1, ease: Expo.easeInOut}, "op+=3") 
+
+tl.from('.top img', 2, {scale: 1.3, ease: Expo.easeOut}, "op+=3") 
+tl.from('.top h1 .box1 span', 2, {opacity: 0, y: 30, ease: Expo.easeInOut, stagger: 0.025}, "op+=3.5") 
+tl.from('.top h1 .box2 span', 2, {opacity: 0, y: 30, ease: Expo.easeInOut, stagger: 0.025}, "op+=3.5") 
+tl.from('.top h1 .box3 span', 2, {opacity: 0, y: 30, ease: Expo.easeInOut, stagger: 0.025}, "op+=3.5") 
+tl.from('.top p', 2, {opacity: 0, yPercent: 10, ease: Expo.easeOut}, "op+=5") 
+
+
+
+/*
+tl.set('main', {css: {autoAlpha: 0}}) 
+tl.to('.op-wrapper', {css: {opacity: 1, duration: 1}, ease: Expo.easeInOut}, "op") 
+//tl.to('.op-wrapper', {css: {opacity: 1, duration: 1}, ease: Expo.easeInOut}, "op+=.5") 
+tl.to('.op-wrapper svg path', 2.5, {css: {opacity: 1}, ease: Expo.easeInOut, stagger: 0.1}, "op+=1.5")
 */
-//}
+}
+
+if(location.href=='http://localhost:3000/'){
+    let preventer = document.getElementsByClassName('prevent');
+    window.addEventListener('load', function() {
+        preventer[0].classList.toggle('none');
+    })
+};
+
+

@@ -9,32 +9,35 @@ window.onload = function() {
       body.classList.remove('nav-open');
     }, false);
   }
+/*
+const body = document.body;
+const headerLinks = document.querySelectorAll('global-nav_list a');
+headerLinks.addEventListener("click", function () {
+  body.classList.remove('nav-open');
+});
+*/
+    
+//toggleNav();
   
   
-  //toggleNav();
-  
-  /*
-  // Change bcColor after scroll
-  window.addEventListener( "scroll", function() {
-  
-      //var header = document.getElementsByTagName('header');
-      //var headerLogo = header.querySelector("h1");
-      var header = document.querySelector("header");
-      var headerUl = document.getElementById("headerUl");
-      var headerLinks = document.querySelectorAll("header li a");
-      var rect = header.getBoundingClientRect();
-      var y = rect.top + window.pageYOffset; 
-      if (y > 0) {    
-        headerUl.classList.add('header-moved');
-        gsap.to("header",{duration: 1.5, background: "rgb(6,36,118)", background: "linear-gradient(125deg, rgba(6,36,118,1) 0%, rgba(41,132,168,1) 100%)",});
-        var i = 0, length = headerLinks.length;
-            for ( ; i < length; i++) {
-                headerLinks[i].style.color = "white";
-                }
-      } else {
-              gsap.to("header",{duration: 1.5, background: "transparent",});
-              gsap.to("header li a",{color: "var(--mainColor)",});
-        }
-    });
+//Change bcColor after scroll
+window.addEventListener( "scroll", function() {
+  //var header = document.getElementsByTagName('header');    
+  const header = document.querySelector("header");
+  const rect = header.getBoundingClientRect();
+  const y = rect.top + window.pageYOffset; 
+  if (y > 0) {    
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 
-    */
+
+let body = document.body;
+const headerLinks = document.getElementsByClassName('headerLink');
+for ( let i = 0; i < 10; i++ ) {
+  headerLinks[i].addEventListener('click', function () {
+    body.classList.remove('nav-open');
+  })
+};

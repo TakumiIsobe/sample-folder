@@ -2,6 +2,7 @@
 gsap.config({nullTargetWarn: false});
 const tl = gsap.timeline();
 
+
 tl.set('main', {opacity: 0}) 
 tl.set('.op-wrapper', {opacity: 0}) 
 tl.set('.op-wrapper svg path, .op-wrapper h2', {opacity: 0}) 

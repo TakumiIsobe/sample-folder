@@ -36,7 +36,7 @@ window.addEventListener( "scroll", function() {
 
 let body = document.body;
 const headerLinks = document.getElementsByClassName('headerLink');
-for ( let i = 0; i < 10; i++ ) {
+for ( let i = 0; i < 15; i++ ) {
   headerLinks[i].addEventListener('click', function () {
     body.classList.remove('nav-open');
   })

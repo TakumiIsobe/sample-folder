@@ -8,18 +8,9 @@ window.onload = function() {
     blackBg.addEventListener('click', function() {
       body.classList.remove('nav-open');
     }, false);
-  }
-/*
-const body = document.body;
-const headerLinks = document.querySelectorAll('global-nav_list a');
-headerLinks.addEventListener("click", function () {
-  body.classList.remove('nav-open');
-});
-*/
-    
-//toggleNav();
-  
-  
+};
+
+
 //Change bcColor after scroll
 window.addEventListener( "scroll", function() {
   //var header = document.getElementsByTagName('header');    
@@ -36,7 +27,7 @@ window.addEventListener( "scroll", function() {
 
 let body = document.body;
 const headerLinks = document.getElementsByClassName('headerLink');
-for ( let i = 0; i < 15; i++ ) {
+for ( let i = 0; i < 10; i++ ) {
   headerLinks[i].addEventListener('click', function () {
     body.classList.remove('nav-open');
   })
